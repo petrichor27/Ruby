@@ -145,7 +145,15 @@ def countprost a
   count
 end
 
-
+#2
+def sum3 a
+  sum=0
+  until a==0
+    sum += if (a%10)%3==0 then a%10 else 0 end
+    a/=10
+  end
+  sum
+end
 
 
 
@@ -160,6 +168,7 @@ when 2 then puts max a
 when 3 then puts min a
 when 4 then puts proizv a
 when 5 then puts countprost a
+when 6 then puts sum3 a
 
 else
   puts "Hello world"
