@@ -68,9 +68,8 @@ puts eval(com2)
 
 
 #2.1
-
-puts "Введите число:"
-a=gets.chop.to_i
+#puts "Введите число:"
+#a=gets.chop.to_i
 =begin
 b=0
 until a==0
@@ -110,7 +109,7 @@ def min a
   m
 end
 
-def proizv a
+def mult a
   p=1
   until a==0
     p *= a%10
@@ -177,6 +176,10 @@ def delmaxprost a
   del
 end
 
+=begin
+puts "Введите число:"
+a=gets.chop.to_i
+
 puts "Выберите метод:\n1. Сумма цифр числа\n2. Максимальная цифра числа\n3. Минимальная цифра числа"
 puts "4. Произведение цифр числа\n5. Количество чисел, взаимно простых с заданным"
 puts "6. Сумма цифр числа, делящихся на 3\n7. Делитель числа, являющийся взаимно простым с
@@ -187,12 +190,45 @@ case number
 when 1 then puts sum a
 when 2 then puts max a
 when 3 then puts min a
-when 4 then puts proizv a
+when 4 then puts mult a
 when 5 then puts countprost a
 when 6 then puts sum3 a
 when 7 then puts delmaxprost a
 else
   puts "Hello world"
 end
+=end
 
 
+#3.1
+def min_el(list)
+  min = list[0]
+  list.each { |a|
+    if a < min
+      min = a
+    end
+  }
+  min
+end
+
+def max_el(list)
+  max = list[0]
+  list.each { |a|
+    if a > max
+      max = a
+    end
+  }
+  max
+end
+
+def sum_el(list)
+  sum = 0
+  list.each { |a| sum+=a }
+  sum
+end
+
+def mult_el(list)
+  mul = 1
+  list.each { |a| mul*=a }
+  mul
+end
