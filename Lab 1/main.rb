@@ -34,3 +34,11 @@ answer = if lang=="ruby"
          end
        end
 puts answer
+
+#var 3
+case lang
+when "ruby" then puts("Ты подлиза!")
+when "c#", "c++" then puts("Как скучно!")
+when "python" then puts("Слишком легко!")
+else puts("Скоро будет ruby")
+end
