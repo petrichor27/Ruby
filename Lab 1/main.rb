@@ -20,3 +20,17 @@ else
        end
   end
 end
+
+#var 2
+answer = if lang=="ruby"
+           "Ты подлиза!"
+       else
+         if lang=="c#" or lang=="c++"
+          "Как скучно!"
+         else if lang=="python"
+           "Слишком легко!"
+              else "Скоро будет ruby"
+              end
+         end
+       end
+puts answer
