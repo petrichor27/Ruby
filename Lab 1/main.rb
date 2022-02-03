@@ -57,7 +57,7 @@ end
 
 #1.4
 =begin
-puts "Введите команду ОС"
+puts "Введите команду ОС:"
 com1=gets.chop
 puts(`#{com1}`)
 
@@ -155,12 +155,33 @@ def sum3 a
   sum
 end
 
-
+#3
+def delmaxprost a
+  b=a/2
+  del, kol = 1,0
+  until b==1
+    if a%b==0
+      c=a
+      tempkol=0
+      until c==0
+        if nod(c%10,b) == 1 then tempkol+=1 end
+        c/=10
+      end
+      if tempkol>kol
+        kol = tempkol
+        del = b
+      end
+    end
+    b-=1
+  end
+  del
+end
 
 puts "Выберите метод:\n1. Сумма цифр числа\n2. Максимальная цифра числа\n3. Минимальная цифра числа"
 puts "4. Произведение цифр числа\n5. Количество чисел, взаимно простых с заданным"
 puts "6. Сумма цифр числа, делящихся на 3\n7. Делитель числа, являющийся взаимно простым с
 наибольшим количеством цифр данного числа"
+
 number = gets.chop.to_i
 case number
 when 1 then puts sum a
@@ -169,8 +190,9 @@ when 3 then puts min a
 when 4 then puts proizv a
 when 5 then puts countprost a
 when 6 then puts sum3 a
-
+when 7 then puts delmaxprost a
 else
   puts "Hello world"
 end
+
 
