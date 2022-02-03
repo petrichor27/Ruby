@@ -119,4 +119,49 @@ def proizv a
   p
 end
 
-puts proizv(a), sum(a), max(a), min(a)
+#puts proizv(a), sum(a), max(a), min(a)
+
+#2.3
+# 1
+def nod a, b
+  while a != 0 and b != 0
+    if a > b
+      a = a % b
+    else b = b % a
+    end
+  end
+  a + b
+end
+
+def countprost a
+  b=a-1
+  count=0
+  until b==0
+    if nod(a, b) == 1
+      count+=1
+    end
+    b-=1
+  end
+  count
+end
+
+
+
+
+
+puts "Выберите метод:\n1. Сумма цифр числа\n2. Максимальная цифра числа\n3. Минимальная цифра числа"
+puts "4. Произведение цифр числа\n5. Количество чисел, взаимно простых с заданным"
+puts "6. Сумма цифр числа, делящихся на 3\n7. Делитель числа, являющийся взаимно простым с
+наибольшим количеством цифр данного числа"
+number = gets.chop.to_i
+case number
+when 1 then puts sum a
+when 2 then puts max a
+when 3 then puts min a
+when 4 then puts proizv a
+when 5 then puts countprost a
+
+else
+  puts "Hello world"
+end
+
