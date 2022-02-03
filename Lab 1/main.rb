@@ -68,11 +68,55 @@ puts eval(com2)
 
 
 #2.1
+
 puts "Введите число:"
 a=gets.chop.to_i
+=begin
 b=0
 until a==0
   b+=a%10
   a/=10
 end
 puts b
+=end
+
+#2.2
+def sum a
+  b=0
+  until a==0
+    b+=a%10
+    a/=10
+  end
+  b
+end
+
+def max a
+  m=a%10
+  a/=10
+  until a==0
+    m = if a%10>m then a%10 else m end
+    a/=10
+  end
+  m
+end
+
+def min a
+  m=a%10
+  a/=10
+  until a==0
+    m = if a%10<m then a%10 else m end
+    a/=10
+  end
+  m
+end
+
+def proizv a
+  p=1
+  until a==0
+    p *= a%10
+    a/=10
+  end
+  p
+end
+
+puts proizv(a), sum(a), max(a), min(a)
