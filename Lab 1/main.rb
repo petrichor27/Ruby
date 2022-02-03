@@ -232,3 +232,35 @@ def mult_el(list)
   list.each { |a| mul*=a }
   mul
 end
+
+#3.2
+puts "Выберите метод:\n1. Минимальный элемент\n2. Максимальный элемент\n3. Сумма\n4. Произведение"
+met_num=gets.chop.to_i
+puts "Откуда считать список?\n1. Из файла\n2. С клавиатуры"
+from_where=gets.chop.to_i
+arr=Array.new
+if from_where==1
+  puts "Введите адрес файла"
+  file=gets.chop
+  File.open(file,"r") do |f|
+    while (line = f.gets)
+      arr.append(line.to_i)
+    end
+  end
+else if from_where==2
+       el = gets
+       until el == "\n"
+         arr.append(el.to_i)
+         el = gets
+       end
+     end
+end
+
+case met_num
+when 1 then puts min_el arr
+when 2 then puts max_el arr
+when 3 then puts sum_el arr
+when 4 then puts mult_el arr
+else
+  puts "Ошибка"
+end
