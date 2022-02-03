@@ -2,13 +2,17 @@
 #puts("Hello World!")
 
 #1.2
-#puts("Enter your name:")
-#name=gets.chop
-#puts("Привет, #{name}!")
+=begin
+puts("Enter your name:")
+name=gets.chop
+puts("Привет, #{name}!")
+=end
 
 #1.3
-#puts("Какой язык твой любимый?")
-#lang=gets.chop
+=begin
+puts("Какой язык твой любимый?")
+lang=gets.chop
+=end
 
 #var 1
 =begin
@@ -52,6 +56,7 @@ end
 =end
 
 #1.4
+=begin
 puts "Введите команду ОС"
 com1=gets.chop
 puts(`#{com1}`)
@@ -59,3 +64,15 @@ puts(`#{com1}`)
 puts "Введите команду Ruby:"
 com2 = gets.chop
 puts eval(com2)
+=end
+
+
+#2.1
+puts "Введите число:"
+a=gets.chop.to_i
+b=0
+until a==0
+  b+=a%10
+  a/=10
+end
+puts b
