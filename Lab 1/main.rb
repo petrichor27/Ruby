@@ -2,17 +2,18 @@
 #puts("Hello World!")
 
 #1.2
-=begin
-puts("Enter your name:")
-name=gets.chop
-puts("Привет, #{name}!")
-=end
+
+
+#puts "Привет, " + ARGV[0]
+
 
 #1.3
 =begin
+ARGV.clear
 puts("Какой язык твой любимый?")
 lang=gets.chop
 =end
+
 
 #var 1
 =begin
@@ -55,6 +56,7 @@ else puts("Скоро будет ruby")
 end
 =end
 
+
 #1.4
 =begin
 puts "Введите команду ОС:"
@@ -68,9 +70,10 @@ puts eval(com2)
 
 
 #2.1
-#puts "Введите число:"
-#a=gets.chop.to_i
+
 =begin
+a= ARGV[0].to_i
+
 b=0
 until a==0
   b+=a%10
@@ -78,6 +81,7 @@ until a==0
 end
 puts b
 =end
+
 
 #2.2
 def sum a
@@ -118,8 +122,6 @@ def mult a
   p
 end
 
-#puts proizv(a), sum(a), max(a), min(a)
-
 #2.3
 # 1
 def nod a, b
@@ -144,7 +146,7 @@ def countprost a
   count
 end
 
-#2
+# 2
 def sum3 a
   sum=0
   until a==0
@@ -154,7 +156,7 @@ def sum3 a
   sum
 end
 
-#3
+# 3
 def delmaxprost a
   b=a/2
   del, kol = 1,0
@@ -177,15 +179,13 @@ def delmaxprost a
 end
 
 =begin
-puts "Введите число:"
-a=gets.chop.to_i
-
+a= ARGV[0].to_i
 puts "Выберите метод:\n1. Сумма цифр числа\n2. Максимальная цифра числа\n3. Минимальная цифра числа"
 puts "4. Произведение цифр числа\n5. Количество чисел, взаимно простых с заданным"
 puts "6. Сумма цифр числа, делящихся на 3\n7. Делитель числа, являющийся взаимно простым с
 наибольшим количеством цифр данного числа"
 
-number = gets.chop.to_i
+number = ARGV[1].to_i
 case number
 when 1 then puts sum a
 when 2 then puts max a
@@ -198,6 +198,7 @@ else
   puts "Hello world"
 end
 =end
+
 
 
 #3.1
@@ -234,6 +235,7 @@ def mult_el(list)
 end
 
 #3.2
+=begin
 puts "Выберите метод:\n1. Минимальный элемент\n2. Максимальный элемент\n3. Сумма\n4. Произведение"
 met_num=gets.chop.to_i
 puts "Откуда считать список?\n1. Из файла\n2. С клавиатуры"
@@ -264,3 +266,6 @@ when 4 then puts mult_el arr
 else
   puts "Ошибка"
 end
+=end
+
+
