@@ -292,3 +292,15 @@ def count_inter(arr, a, b)
   end
   count
 end
+# 26
+def count_between(arr)
+  fmin = index_min arr
+  lmin = fmin
+  min = arr[fmin]
+  arr.each_index do |i|
+    if arr[i] == min
+      lmin = i
+    end
+  end
+  lmin - fmin - 1
+end
