@@ -324,3 +324,77 @@ def l1andl2(l1, l2)
   end
   l3
 end
+
+
+
+def enter_mas
+  arr = Array.new
+  el = gets
+  until el == "\n"
+    arr.append(el.to_i)
+    el = gets
+  end
+  arr
+end
+
+puts "Какую задачу решить?"
+puts "1. Найти индекс минимального элемента"
+puts "2. Найти количество элементов в интервале"
+puts "3. Найти количество элементов между первым и последним минимальным"
+puts "4. Найти количество элементов, значение которых принадлежит этому отрезку"
+puts "5. Для двух введенных списков L1 и L2 построить новый список, состоящий из элементов, встречающихся только в одном из этих списков и не повторяющихся в них (между списками пустая строка)"
+met = gets.chop.to_i
+puts "Откуда считать данные?\n1. Из файла\n2. С клавиатуры"
+from_where=gets.chop.to_i
+puts ""
+arr = Array.new
+if met<5
+  if from_where==1
+    puts "Введите адрес файла"
+    file=gets.chop
+    File.open(file,"r") do |f|
+      while (line = f.gets)
+        arr.append(line.to_i)
+      end
+    end
+  else if from_where==2
+         arr = enter_mas
+       end
+  end
+end
+
+case met
+when 1 then puts "#{index_min(arr)}"
+when 2 then puts "#{count_inter(arr.slice(0...arr.length - 2), arr[-2], arr[-1])}"
+when 3 then puts "#{count_between(arr)}"
+when 4 then puts "#{count_otrez(arr.slice(0...arr.length - 2), arr[-2], arr[-1])}"
+when 5 then
+  arr2 = Array.new
+  if from_where == 2
+    puts "Первый список:"
+    arr=enter_mas
+    puts "Второй список:"
+    arr2=enter_mas
+  else if from_where == 1
+         puts "Введите адрес файла"
+         file=gets.chop
+         File.open(file,"r") do |f|
+           while (line = f.gets)
+             if line == "\n"
+               arr.each { |x| arr2.append(x) }
+               arr.clear
+             else
+               arr.append(line.to_i)
+             end
+           end
+         end
+       end
+  end
+puts "#{l1andl2(arr,arr2)}"
+else
+  puts "Ошибка!!!!"
+end
+
+
+#C:\Users\Елизавета\Documents\GitHub\Ruby\Lab 1\3.2.txt
+
