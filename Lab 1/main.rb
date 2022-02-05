@@ -304,3 +304,13 @@ def count_between(arr)
   end
   lmin - fmin - 1
 end
+# 38
+def count_otrez(arr, a, b)
+  count = 0
+  arr.each do |x|
+    if (a..b).include?(x)
+      count += 1
+    end
+  end
+  count
+end
