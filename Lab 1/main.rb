@@ -314,3 +314,13 @@ def count_otrez(arr, a, b)
   end
   count
 end
+# 50
+def l1andl2(l1, l2)
+  l3 = Array.new
+  (l1 | l2).each do |a|
+    unless l3.include?(a)
+      l3.append(a)
+    end
+  end
+  l3
+end
