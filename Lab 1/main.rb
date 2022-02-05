@@ -269,3 +269,16 @@ end
 =end
 
 
+
+
+#4
+# 2
+def index_min(arr)
+  min = arr[0]
+  arr.each do |a|
+    if a < min
+      min = a
+    end
+  end
+  arr.index(min)
+end
