@@ -282,3 +282,13 @@ def index_min(arr)
   end
   arr.index(min)
 end
+# 14
+def count_inter(arr, a, b)
+  count = 0
+  arr.each do |x|
+    if (a+1...b).include?(x)
+      count += 1
+    end
+  end
+  count
+end
