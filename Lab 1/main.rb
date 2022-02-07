@@ -416,3 +416,18 @@ def filename str
   (str.scan(/[a-zA-Z0-9]+\.[a-zA-Z]+/)[0]).scan(/[a-zA-Z0-9]+/)[0]
 end
 
+=begin
+puts "Какую задачу решить?"
+puts "1. Проверить, упорядочены ли строчные символы этой строки по возрастанию"
+puts "2. Подсчитать количество букв А в этой строке"
+puts "3. Найти имя файла без расширения"
+met = gets.chop.to_i
+puts "Введите строку"
+str = gets.chop
+case met
+when 1 then puts check_sort? str
+when 2 then puts countA str
+when 3 then puts filename str
+else puts "Ошииибкаааа!"
+end
+=end
