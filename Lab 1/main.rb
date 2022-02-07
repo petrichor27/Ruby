@@ -525,3 +525,25 @@ def sredves str
   str.each_byte { |s| weigh += count1 to_bin s }
   weigh.to_f/str.length
 end
+
+# 4
+def makehash arr
+  arr2 = {}
+  arr.each do |a|
+    arr2[a] = sredves a
+  end
+  arr2
+end
+
+def dispersia(arr2, temp, first)
+  sred = (arr2[temp] + arr2[first]) / 2 #средний вес для двух строк
+  (arr2[temp] - sred) ** 2 + (arr2[first] - sred) ** 2
+end
+
+def kvadr_otkl_hash arr2, arr
+  arr_otkl = {}
+  arr.each do |a|
+    arr_otkl[a] = Math.sqrt(dispersia(arr2, a, arr[0]))
+  end
+  arr_otkl
+end
