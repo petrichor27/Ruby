@@ -404,3 +404,9 @@ def check_sort? str
   s == s.sort
 end
 
+# 10
+def countA str
+  count=0
+  str.each_char { |s| if s=='A' then count+=1 end}
+  count
+end
