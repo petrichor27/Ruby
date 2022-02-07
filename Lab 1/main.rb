@@ -337,6 +337,7 @@ def enter_mas
   arr
 end
 
+=begin
 puts "Какую задачу решить?"
 puts "1. Найти индекс минимального элемента"
 puts "2. Найти количество элементов в интервале"
@@ -394,7 +395,12 @@ puts "#{l1andl2(arr,arr2)}"
 else
   puts "Ошибка!!!!"
 end
+=end
 
-
-#C:\Users\Елизавета\Documents\GitHub\Ruby\Lab 1\3.2.txt
+#5.1
+# 2
+def check_sort? str
+  s = str.scan(/[a-z]/)
+  s == s.sort
+end
 
