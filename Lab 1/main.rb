@@ -547,3 +547,28 @@ def kvadr_otkl_hash arr2, arr
   end
   arr_otkl
 end
+
+# 7
+def count_gs str
+  count = 0
+  reg_glas = /[aeuoiy]/
+  reg_sogl = /[qwrtpsdfghjklzxcvbnm]/
+  for i in 0...str.length
+    if str[i] =~ reg_glas and str[i+1] =~ reg_sogl
+      count+=1
+    end
+  end
+  count
+end
+
+def count_sg str
+  count = 0
+  reg_glas = /[aeuoiy]/
+  reg_sogl = /[qwrtpsdfghjklzxcvbnm]/
+  for i in 0...str.length
+    if str[i] =~ reg_sogl and str[i+1] =~ reg_glas
+      count+=1
+    end
+  end
+  count
+end
