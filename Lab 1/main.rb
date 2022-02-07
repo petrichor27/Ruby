@@ -495,3 +495,11 @@ file=gets.chop
 arr = readlines file
 puts arr.sort {|a, b| a.length <=> b.length}
 =end
+
+#6.2
+=begin
+puts "Введите адрес файла"
+file=gets.chop
+arr = readlines file
+puts arr.sort {|a, b| a.split.length <=> b.split.length}
+=end
