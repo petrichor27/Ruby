@@ -477,3 +477,21 @@ when 3 then puts filename str
 else puts "Ошииибкаааа!"
 end
 =end
+
+#6.1
+def readlines file
+  arr = []
+  File.open(file,"r") do |f|
+    while (line = f.gets)
+      arr.append(line)
+    end
+  end
+  arr
+end
+
+=begin
+puts "Введите адрес файла"
+file=gets.chop
+arr = readlines file
+puts arr.sort {|a, b| a.length <=> b.length}
+=end
