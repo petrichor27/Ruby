@@ -452,3 +452,10 @@ def findlat str
   lat
 end
 
+# 10
+def countlat str
+  reg = /[a-z]/
+  lat = Array.new
+  str.each_char { |s| if s =~ reg and not lat.include?(s) then lat.append(s) end }
+  lat.length
+end
