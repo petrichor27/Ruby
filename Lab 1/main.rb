@@ -459,3 +459,21 @@ def countlat str
   str.each_char { |s| if s =~ reg and not lat.include?(s) then lat.append(s) end }
   lat.length
 end
+
+# 17 == 5.1.17
+
+=begin
+puts "Какую задачу решить?"
+puts "1. Найти все строчные символы латиницы, которые в ней используются"
+puts "2. Найти количество задействованных символов латиницы в этой строке (без дубликатов)"
+puts "3. Найти имя файла без расширения"
+met = gets.chop.to_i
+puts "Введите строку"
+str = gets.chop
+case met
+when 1 then puts "#{findlat str}"
+when 2 then puts countlat str
+when 3 then puts filename str
+else puts "Ошииибкаааа!"
+end
+=end
