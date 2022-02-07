@@ -572,3 +572,20 @@ def count_sg str
   end
   count
 end
+
+# 11
+def max_sredves3 str
+  max = sredves(str[0]+str[1]+str[2])
+  for i in 0...(str.length-2)
+    if sredves(str[i]+str[i+1]+str[i+2]) > max then max = sredves(str[i]+str[i+1]+str[i+2]) end
+  end
+  max
+end
+
+def makehash2 arr
+  arr2 = {}
+  arr.each do |a|
+    arr2[a] = max_sredves3 a
+  end
+  arr2
+end
