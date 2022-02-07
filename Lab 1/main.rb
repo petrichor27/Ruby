@@ -410,3 +410,9 @@ def countA str
   str.each_char { |s| if s=='A' then count+=1 end}
   count
 end
+
+# 17
+def filename str
+  (str.scan(/[a-zA-Z0-9]+\.[a-zA-Z]+/)[0]).scan(/[a-zA-Z0-9]+/)[0]
+end
+
