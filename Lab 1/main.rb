@@ -431,3 +431,14 @@ when 3 then puts filename str
 else puts "Ошииибкаааа!"
 end
 =end
+
+#5.2
+def finddate str
+  reg = /\d{2} (января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря) ((19|20)([0-9]{2}))/
+  while str.match(reg).to_s != ""
+    puts str.match(reg)
+    str = str.sub(str.match(reg).to_s,"")
+  end
+end
+
+#finddate "ahdbywga31 мая 2007щжфыав ihwd 11 января 192801 июня 2012sf"
