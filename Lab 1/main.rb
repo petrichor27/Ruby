@@ -442,3 +442,13 @@ def finddate str
 end
 
 #finddate "ahdbywga31 мая 2007щжфыав ihwd 11 января 192801 июня 2012sf"
+
+#5.3
+# 2
+def findlat str
+  reg = /[a-z]/
+  lat = Array.new
+  str.each_char { |s| if s =~ reg then lat.append(s) end }
+  lat
+end
+
