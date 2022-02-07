@@ -503,3 +503,25 @@ file=gets.chop
 arr = readlines file
 puts arr.sort {|a, b| a.split.length <=> b.split.length}
 =end
+
+#6.3
+# 2
+def to_bin a
+  if a <= 1
+    a.to_s
+  else
+    to_bin(a / 2) + (a % 2).to_s
+  end
+end
+
+def count1 bin
+  count = 0
+  bin.each_char { |c| if c=="1" then count+=1 end }
+  count
+end
+
+def sredves str
+  weigh = 0
+  str.each_byte { |s| weigh += count1 to_bin s }
+  weigh.to_f/str.length
+end
