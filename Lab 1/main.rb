@@ -589,3 +589,26 @@ def makehash2 arr
   end
   arr2
 end
+
+=begin
+puts "Как отсортировать?"
+puts "1. В порядке увеличения среднего веса ASCII-кода символа строки"
+puts "2. В порядке увеличения квадратичного отклонения среднего веса ASCII-кода символа строки от среднего веса ASCII-кода символа первой строки"
+puts "3. В порядке увеличения разницы между количеством сочетаний «гласная-согласная» и «согласная-гласная» в строке"
+puts "4. В порядке квадратичного отклонения дисперсии максимального среднего веса ASCII-кода тройки символов в строке от максимального среднего веса ASCII-кода тройки символов в первой строке"
+met = gets.chop.to_i
+#puts "Введите адрес файла"
+file="C:\\Users\\Елизавета\\Documents\\GitHub\\Ruby\\Lab 1\\3.2.txt"
+arr = readlines file
+case met
+when 1 then puts arr.sort {|a, b| sredves(a) <=> sredves(b) }
+when 2 then
+  arr_otkl = kvadr_otkl_hash(makehash(arr), arr)
+  puts arr.sort { |a,b| arr_otkl[a] <=> arr_otkl[b] }
+when 3 then puts arr.sort {|a,b| (count_sg(a)-count_gs(a)).abs <=> (count_sg(b)-count_gs(b)).abs}
+when 4 then
+  arr_otkl2 = kvadr_otkl_hash(makehash2(arr), arr)
+  puts arr.sort { |a,b| arr_otkl2[a] <=> arr_otkl2[b] }
+else puts "Ошииибкаааа!"
+end
+=end
