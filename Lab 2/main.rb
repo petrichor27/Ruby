@@ -125,11 +125,11 @@ def write_to_txt(file, deps)
   end
 end
 
-
+=begin
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
 dep_e = Department.new("Department of energy", "8(123)4523432","implementation of state policy in the field of the fuel and energy complex")
 dep_d = Department.new("Department of defense", "8(123)1111111","command of the armed forces","controls the financial, economic and economic activities of the Armed Forces")
-=begin
+
 puts "\n*** Список объектов ***"
 out(dep_j,dep_e,dep_d)
 puts "\n*** Добавление ***"
@@ -145,5 +145,10 @@ out(dep_j)
 =end
 
 # dep_s = Department.new("Department of state", "8(123)1223")
-#printDeps(read_from_txt("Department.txt"))
-write_to_txt("Department1.txt",[dep_j,dep_e,dep_d])
+deps = read_from_txt("Department1.txt")
+puts "Из файла:"
+printDeps(deps)
+deps.append(Department.new("Department of state", "8(123)1223777"))
+puts "С новым объектом:"
+printDeps(deps)
+write_to_txt("Department1.txt",deps)
