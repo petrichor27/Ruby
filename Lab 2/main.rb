@@ -75,6 +75,42 @@ def out(*arr)
     end
 end
 
+def find_duties(duties)
+  reg_duty = /"[\w| |,|.]+"/
+  d = []
+  a = reg_duty.match(duties).to_s
+  until a == "" do
+    d.append(a[1...a.length - 1])
+    duties.sub!(a, "")
+    a = reg_duty.match(duties).to_s
+  end
+  d
+end
+
+def read_from_txt(file)
+  reg_name = /^"[\w| |,|.]+/
+  reg_phone = /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
+  reg_duties = /\(["[\w| |,|.]+"]*\)$/
+  deps = []
+  File.open(file,"r") do |f|
+    while (line = f.gets)
+      name = reg_name.match(line).to_s
+      name[0]=''
+      phone = reg_phone.match(line).to_s
+      duties = reg_duties.match(line).to_s
+      d = find_duties(duties)
+      dep = Department.new(name, phone)
+      (0..d.length-1).each { |x| dep.setDuty(d[x]) }
+      deps.append(dep)
+    end
+  end
+  deps
+end
+
+
+
+
+
 =begin
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
 dep_e = Department.new("Department of energy", "8(123)4523432","implementation of state policy in the field of the fuel and energy complex")
@@ -94,4 +130,5 @@ dep_j.deleteDuty(1)
 out(dep_j)
 =end
 
-dep_s = Department.new("Department of state", "8(123)1223")
+# dep_s = Department.new("Department of state", "8(123)1223")
+read_from_txt("Department.txt")
