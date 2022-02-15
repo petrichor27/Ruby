@@ -1,0 +1,3 @@
+"Department of justice", 8(123)1248525, ("Control of the activities of the notary", "Control of court activities")
+"Department of energy", 8(123)4523432, ()
+"Department of defense", 8(123)1111111, ("command of the armed forces", "controls the financial, economic and economic activities of the Armed Forces")
