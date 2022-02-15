@@ -107,7 +107,9 @@ def read_from_txt(file)
   deps
 end
 
-
+def printDeps(deps)
+  deps.each { |x| out(x) }
+end
 
 
 
@@ -131,4 +133,4 @@ out(dep_j)
 =end
 
 # dep_s = Department.new("Department of state", "8(123)1223")
-read_from_txt("Department.txt")
+printDeps(read_from_txt("Department.txt"))
