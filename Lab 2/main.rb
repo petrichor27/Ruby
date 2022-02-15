@@ -2,7 +2,7 @@ class Department
   def initialize (name, phone, *duties)
     @duties = duties
     @name = name
-    if /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/ =~ phone
+    if Department.checkPhone?(phone)
       @phone = phone
     else raise ArgumentError.new("Это не номер телефона!")
     end
@@ -36,6 +36,9 @@ class Department
     @duties.each { |d| puts "#{@duties.index(d)}. #{d}" }
   end
 
+  def Department.checkPhone?(phone)
+    /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/ =~ phone
+  end
 =begin
   def getName
     @name
@@ -72,10 +75,11 @@ def out(*arr)
     end
 end
 
-
+=begin
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
 dep_e = Department.new("Department of energy", "8(123)4523432","implementation of state policy in the field of the fuel and energy complex")
 dep_d = Department.new("Department of defense", "8(123)1111111","command of the armed forces","controls the financial, economic and economic activities of the Armed Forces")
+
 puts "\n*** Список объектов ***"
 out(dep_j,dep_e,dep_d)
 puts "\n*** Добавление ***"
@@ -88,3 +92,6 @@ out(dep_j)
 puts "\n*** Удаление ***"
 dep_j.deleteDuty(1)
 out(dep_j)
+=end
+
+dep_s = Department.new("Department of state", "8(123)1223")
