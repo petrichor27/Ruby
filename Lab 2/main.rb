@@ -2,39 +2,46 @@ class Department
   def initialize (name, phone, *duties)
     @duties = duties
     @name = name
+    @index = 0
+    self.phone=phone
+  end
+
+  attr_accessor :name
+  attr_reader :phone
+  attr_accessor :index
+
+  def phone=(phone)
     if Department.checkPhone?(phone)
       @phone = phone
     else raise ArgumentError.new("Это не номер телефона!")
     end
   end
-
-  attr_accessor :name
-  attr_accessor :phone
-
   def setDuty(val)
     @duties.append(val)
   end
 
-  def chooseDuty()
-    puts "Какую обязанность выбрать?"
-    gets.chop
+  def chooseDuty(index)
+    @index = index
   end
 
-  def deleteDuty(index)
-    @duties.delete(@duties[index])
+  def deleteDuty
+    @duties.delete(@duties[@index])
+    @index +=1
   end
 
-  def getDuty(index)
-    @duties[index]
+  def getDuty
+    @duties[@index]
   end
 
-  def updateDuty(index, new)
-    @duties[index] = new
+  def updateDuty(new)
+    @duties[@index] = new
   end
 
   def printDuties
     @duties.each { |d| puts "#{@duties.index(d)}. #{d}" }
   end
+
+
 
   def Department.checkPhone?(phone)
     /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/ =~ phone
@@ -50,7 +57,7 @@ class Department
     @name
   end
 
-  def getPhone
+  def phone
     @phone
   end
 
@@ -81,6 +88,10 @@ def out(*arr)
     end
 end
 
+def printDeps(deps)
+  deps.each { |x| out(x) }
+end
+
 def find_duties(duties)
   reg_duty = /"[\w| |,|.]+"/
   d = []
@@ -91,6 +102,13 @@ def find_duties(duties)
     a = reg_duty.match(duties).to_s
   end
   d
+end
+
+def selectDuty(dep)
+  puts "Какую обязанность выбрать?"
+  dep.printDuties
+  d = gets.chomp
+  dep.index = d.to_i
 end
 
 def read_from_txt(file)
@@ -113,10 +131,6 @@ def read_from_txt(file)
   deps
 end
 
-def printDeps(deps)
-  deps.each { |x| out(x) }
-end
-
 def write_to_txt(file, deps)
   File.open(file,"w") do |f|
     deps.each do |x|
@@ -125,24 +139,33 @@ def write_to_txt(file, deps)
   end
 end
 
+
 =begin
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
 dep_e = Department.new("Department of energy", "8(123)4523432","implementation of state policy in the field of the fuel and energy complex")
 dep_d = Department.new("Department of defense", "8(123)1111111","command of the armed forces","controls the financial, economic and economic activities of the Armed Forces")
+#dep_j.phone= "sdgsdgdsg"
 
 puts "\n*** Список объектов ***"
 out(dep_j,dep_e,dep_d)
 puts "\n*** Добавление ***"
 dep_j.setDuty("Control of court activities")
 out(dep_j)
-puts "\nОбязанность №1: " + dep_j.getDuty(1)
+puts "\nОбязанность №1: "
+dep_j.index = 1
+dep_j.getDuty
 puts "\n*** Обновление ***"
-dep_j.updateDuty(1,"Improving the legal literacy of the population")
+dep_j.index=1
+dep_j.updateDuty("Improving the legal literacy of the population")
 out(dep_j)
 puts "\n*** Удаление ***"
-dep_j.deleteDuty(1)
+selectDuty(dep_j)
+dep_j.deleteDuty
 out(dep_j)
+
 =end
+
+
 
 # dep_s = Department.new("Department of state", "8(123)1223")
 deps = read_from_txt("Department1.txt")

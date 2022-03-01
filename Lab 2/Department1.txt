@@ -2,3 +2,5 @@
 "Department of energy", 8(123)4523432, ("implementation of state policy in the field of the fuel and energy complex")
 "Department of defense", 8(123)1111111, ("command of the armed forces", "controls the financial, economic and economic activities of the Armed Forces")
 "Department of state", 8(123)1223777, ()
+"Department of state", 8(123)1223777, ()
+"Department of state", 8(123)1223777, ()
