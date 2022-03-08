@@ -1,0 +1,27 @@
+---
+- !ruby/object:Department
+  duties:
+  - Control of the activities of the notary
+  name: Department of justice
+  index: 0
+  phone: 8(123)1248525
+- !ruby/object:Department
+  duties:
+  - implementation of state policy in the field of the fuel and energy complex
+  name: Department of energy
+  index: 0
+  phone: 8(123)4523432
+- !ruby/object:Department
+  duties:
+  - command of the armed forces
+  - controls the financial, economic and economic activities of the Armed Forces
+  name: Department of defense
+  index: 0
+  phone: 8(123)1111111
+- !ruby/object:Department
+  duties:
+  - Serves as the President's principal adviser on U.S. foreign policy
+  - Conducts negotiations relating to U.S. foreign affairs
+  name: Department of state
+  index: 0
+  phone: 8(123)3445652

@@ -1,3 +1,5 @@
+require 'yaml'
+require 'yaml/store'
 
 #1.1
 class Department
@@ -115,6 +117,15 @@ def write_to_txt(file, deps)
   end
 end
 
+#2.6
+def write_to_yaml(file, deps)
+  File.open(file,"w") do |f|
+    f.puts YAML.dump(deps)
+  end
+end
+
+
+
 #1.2
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
 dep_e = Department.new("Department of energy", "8(123)4523432","implementation of state policy in the field of the fuel and energy complex")
@@ -159,3 +170,4 @@ printDeps(deps)
 write_to_txt("Department.txt",deps)
 =end
 
+write_to_yaml("yaml_text.yaml",[dep_j,dep_e,dep_d,dep_s])
