@@ -190,3 +190,9 @@ puts "С новым объектом:", deps
 write_to_yaml("yaml_text.yaml", deps)
 =end
 
+#3.1
+class Department_list
+  def initialize
+    @dep_list = Array.new
+  end
+end
