@@ -1,4 +1,5 @@
----
+--- !ruby/object:Department_list
+dep_list:
 - !ruby/object:Department
   duties:
   - Control of the activities of the notary
@@ -19,9 +20,8 @@
   index: 0
   phone: 8(123)1111111
 - !ruby/object:Department
-  duties:
-  - Serves as the President's principal adviser on U.S. foreign policy
-  - Conducts negotiations relating to U.S. foreign affairs
+  duties: []
   name: Department of state
   index: 0
   phone: 8(123)3445652
+index: 0
