@@ -72,7 +72,7 @@ end
 
 #2.2
 def find_duties(duties)
-  reg_duty = /"[\w| |,|.]+"/
+  reg_duty = /"[\w| |,|.|']+"/
   d = []
   a = reg_duty.match(duties).to_s
   until a == "" do
@@ -86,7 +86,7 @@ def find_duties(duties)
 def read_from_txt(file)
   reg_name = /^"[\w| |,|.]+/
   reg_phone = /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
-  reg_duties = /\(["[\w| |,|.]+"]*\)$/
+  reg_duties = /\(["[\w| |,|.|']+"]*\)$/
   deps = []
   File.open(file,"r") do |f|
     while (line = f.gets)
@@ -141,7 +141,7 @@ end
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
 dep_e = Department.new("Department of energy", "8(123)4523432","implementation of state policy in the field of the fuel and energy complex")
 dep_d = Department.new("Department of defense", "8(123)1111111","command of the armed forces","controls the financial, economic and economic activities of the Armed Forces")
-dep_s = Department.new("Department of state", "8(123)3445652","Serves as the President's principal adviser on U.S. foreign policy", "Conducts negotiations relating to U.S. foreign affairs")
+dep_s = Department.new("Department of state", "8(123)3445652","Serves as the Presidents principal adviser on U.S. foreign policy", "Conducts negotiations relating to U.S. foreign affairs")
 
 # puts "\n*** Список объектов ***"
 # puts dep_j,dep_e,dep_d,dep_s
@@ -280,6 +280,17 @@ class Department_list
       f.puts YAML.dump(deps)
     end
   end
+
+  #3.4
+  def Department_list.deserialize_yaml(file)
+    @index = 0
+    @dep_list = Department_list.from_yaml(file)
+  end
+
+  def Department_list.deserialize_txt(file)
+    @index = 0
+    @dep_list = Department_list.from_txt(file)
+  end
 end
 
 
@@ -302,8 +313,18 @@ puts "После удаления:", a
 =begin
 b = Department_list.from_yaml "yaml_text.yaml"
 puts b
-Department_list.to_txt("Department.txt",b)
 a = Department_list.from_txt("Department.txt")
 puts a
+
+Department_list.to_txt("Department.txt",a)
 Department_list.to_yaml("yaml_text.yaml",a)
 =end
+
+#3.4
+=begin
+c=Department_list.deserialize_yaml "yaml_text.yaml"
+puts "c", c
+d=Department_list.deserialize_txt "Department.txt"
+puts "d", d
+=end
+

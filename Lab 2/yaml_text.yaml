@@ -8,10 +8,11 @@ dep_list:
   phone: 8(123)1248525
 - !ruby/object:Department
   duties:
-  - implementation of state policy in the field of the fuel and energy complex
-  name: Department of energy
+  - Serves as the Presidents principal adviser on U.S. foreign policy
+  - Conducts negotiations relating to U.S. foreign affairs
+  name: Department of state
   index: 0
-  phone: 8(123)4523432
+  phone: 8(123)3445652
 - !ruby/object:Department
   duties:
   - command of the armed forces
@@ -20,8 +21,9 @@ dep_list:
   index: 0
   phone: 8(123)1111111
 - !ruby/object:Department
-  duties: []
-  name: Department of state
+  duties:
+  - implementation of state policy in the field of the fuel and energy complex
+  name: Department of energy
   index: 0
-  phone: 8(123)3445652
+  phone: 8(123)4523432
 index: 0
