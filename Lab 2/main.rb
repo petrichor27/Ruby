@@ -124,6 +124,17 @@ def write_to_yaml(file, deps)
   end
 end
 
+#2.7
+def read_from_yaml(file)
+  store = YAML::Store.new file
+  deps = ""
+  File.open(file,"r") do |f|
+    while (line = f.gets)
+      deps+= line
+    end
+  end
+  store.load(deps)
+end
 
 
 #1.2
@@ -170,4 +181,6 @@ printDeps(deps)
 write_to_txt("Department.txt",deps)
 =end
 
-write_to_yaml("yaml_text.yaml",[dep_j,dep_e,dep_d,dep_s])
+#write_to_yaml("yaml_text.yaml",[dep_j,dep_e,dep_d,dep_s])
+deps = read_from_yaml "yaml_text.yaml"
+puts "Из файла:", deps
