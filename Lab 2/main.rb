@@ -181,6 +181,12 @@ printDeps(deps)
 write_to_txt("Department.txt",deps)
 =end
 
-#write_to_yaml("yaml_text.yaml",[dep_j,dep_e,dep_d,dep_s])
+#2.8
+=begin
 deps = read_from_yaml "yaml_text.yaml"
 puts "Из файла:", deps
+deps.append(dep_s)
+puts "С новым объектом:", deps
+write_to_yaml("yaml_text.yaml", deps)
+=end
+
