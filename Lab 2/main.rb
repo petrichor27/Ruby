@@ -1,3 +1,5 @@
+
+#1.1
 class Department
   def initialize (name, phone, *duties)
     @duties = duties
@@ -8,90 +10,65 @@ class Department
 
   attr_accessor :name
   attr_reader :phone
-  attr_accessor :index
 
   def phone=(phone)
-    if Department.checkPhone?(phone)
+    if Department.check_phone?(phone)
       @phone = phone
     else raise ArgumentError.new("Это не номер телефона!")
     end
   end
-  def setDuty(val)
+
+  #1.2
+  def to_s
+    "Name: #{name} ; Phone: #{phone}; \nDuties:\n#{duties}\n"
+  end
+
+  #1.3
+  def set_duty(val)
     @duties.append(val)
   end
 
-  def chooseDuty(index)
+  def choose_duty(index)
     @index = index
   end
 
-  def deleteDuty
+  def delete_duty
     @duties.delete(@duties[@index])
     @index +=1
   end
 
-  def getDuty
+  def get_duty
     @duties[@index]
   end
 
-  def updateDuty(new)
+  def update_duty(new)
     @duties[@index] = new
   end
 
-  def printDuties
-    @duties.each { |d| puts "#{@duties.index(d)}. #{d}" }
+  def duties
+    s = ""
+    @duties.each_index { |i| s += "#{i}) #{@duties[i]}\n" }
+    s
   end
 
+  def ask_which_duty
+    puts "Какую обязанность выбрать?"
+    puts duties
+    d = gets.chomp
+    choose_duty(d.to_i)
+  end
 
-
-  def Department.checkPhone?(phone)
+  #1.5
+  def Department.check_phone?(phone)
     /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/ =~ phone
   end
 
-  def dutyToStr()
-    str = ""
-    @duties.each { |d| str += "\"" + d.to_s + "\", " }
-    str[0...str.length-2]
+  def duties_for_txt
+    "\"" + @duties.join("\", \"") + "\""
   end
-=begin
-  def getName
-    @name
-  end
-
-  def phone
-    @phone
-  end
-
-  def setName(val)
-    @name = val
-  end
-
-  def setPhone(val)
-    @phone = val
-  end
-
-  def name=(val)
-    @name = val
-  end
-
-  def phone=(val)
-    @phone = val
-  end
-=end
 end
 
-
-def out(*arr)
-    arr.each do |el|
-      puts "Name: #{el.name}  Phone: #{el.phone}\nDuties:"
-      el.printDuties
-      puts ""
-    end
-end
-
-def printDeps(deps)
-  deps.each { |x| out(x) }
-end
-
+#2.2
 def find_duties(duties)
   reg_duty = /"[\w| |,|.]+"/
   d = []
@@ -102,14 +79,7 @@ def find_duties(duties)
     a = reg_duty.match(duties).to_s
   end
   d
-end
-
-def selectDuty(dep)
-  puts "Какую обязанность выбрать?"
-  dep.printDuties
-  d = gets.chomp
-  dep.index = d.to_i
-end
+  end
 
 def read_from_txt(file)
   reg_name = /^"[\w| |,|.]+/
@@ -124,54 +94,68 @@ def read_from_txt(file)
       duties = reg_duties.match(line).to_s
       d = find_duties(duties)
       dep = Department.new(name, phone)
-      (0..d.length-1).each { |x| dep.setDuty(d[x]) }
+      (0..d.length-1).each { |x| dep.set_duty(d[x]) }
       deps.append(dep)
     end
   end
   deps
 end
 
+#2.3
+def print_deps(deps)
+  deps.each { |x| puts(x) }
+end
+
+#2.4
 def write_to_txt(file, deps)
   File.open(file,"w") do |f|
     deps.each do |x|
-      f.puts "\"#{x.name}\", #{x.phone}, (#{x.dutyToStr})"
+      f.puts "\"#{x.name}\", #{x.phone}, (#{x.duties_for_txt})"
     end
   end
 end
 
-
-=begin
+#1.2
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
 dep_e = Department.new("Department of energy", "8(123)4523432","implementation of state policy in the field of the fuel and energy complex")
 dep_d = Department.new("Department of defense", "8(123)1111111","command of the armed forces","controls the financial, economic and economic activities of the Armed Forces")
-#dep_j.phone= "sdgsdgdsg"
+dep_s = Department.new("Department of state", "8(123)3445652","Serves as the President's principal adviser on U.S. foreign policy", "Conducts negotiations relating to U.S. foreign affairs")
 
-puts "\n*** Список объектов ***"
-out(dep_j,dep_e,dep_d)
+# puts "\n*** Список объектов ***"
+# puts dep_j,dep_e,dep_d,dep_s
+
+#1.4
+=begin
 puts "\n*** Добавление ***"
-dep_j.setDuty("Control of court activities")
-out(dep_j)
-puts "\nОбязанность №1: "
-dep_j.index = 1
-dep_j.getDuty
-puts "\n*** Обновление ***"
-dep_j.index=1
-dep_j.updateDuty("Improving the legal literacy of the population")
-out(dep_j)
-puts "\n*** Удаление ***"
-selectDuty(dep_j)
-dep_j.deleteDuty
-out(dep_j)
+dep_j.set_duty("Control of court activities")
+puts dep_j
 
+puts "\nОбязанность №1: "
+dep_j.choose_duty(1)
+puts dep_j.get_duty
+
+puts "\n*** Обновление ***"
+dep_j.choose_duty(1)
+dep_j.update_duty("Improving the legal literacy of the population")
+puts dep_j
+
+puts "\n*** Удаление ***"
+dep_d.ask_which_duty
+dep_d.delete_duty
+puts dep_d
 =end
 
+#1.5
+#dep_j.phone= "sdgsdgdsg"
 
-
-# dep_s = Department.new("Department of state", "8(123)1223")
-deps = read_from_txt("Department1.txt")
+#2.5
+=begin
+deps = read_from_txt("Department.txt")
 puts "Из файла:"
 printDeps(deps)
-deps.append(Department.new("Department of state", "8(123)1223777"))
+deps.append(Department.new("Department of something", "8(123)1223777","smth"))
 puts "С новым объектом:"
 printDeps(deps)
-write_to_txt("Department1.txt",deps)
+write_to_txt("Department.txt",deps)
+=end
+

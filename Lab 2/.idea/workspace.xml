@@ -81,7 +81,9 @@
       <workItem from="1645796568448" duration="362000" />
       <workItem from="1645797043035" duration="114000" />
       <workItem from="1646058845209" duration="133000" />
-      <workItem from="1646160334028" duration="3450000" />
+      <workItem from="1646160334028" duration="8221000" />
+      <workItem from="1646223247770" duration="4435000" />
+      <workItem from="1646727716270" duration="18998000" />
     </task>
     <servers />
   </component>
@@ -89,6 +91,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab_2@main.rcov" NAME="main Coverage Results" MODIFIED="1646162812079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
+    <SUITE FILE_PATH="coverage/Lab_2@main.rcov" NAME="main Coverage Results" MODIFIED="1646755680760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
   </component>
 </project>
