@@ -291,6 +291,11 @@ class Department_list
     @index = 0
     @dep_list = Department_list.from_txt(file)
   end
+
+  #5
+  def sort_notes_by_name!
+    @dep_list.sort! {|a, b| a.name <=> b.name}
+  end
 end
 
 
@@ -328,3 +333,8 @@ d=Department_list.deserialize_txt "Department.txt"
 puts "d", d
 =end
 
+#3.5
+=begin
+c.sort_notes_by_name!
+puts "sorted",c
+=end
