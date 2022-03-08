@@ -192,7 +192,46 @@ write_to_yaml("yaml_text.yaml", deps)
 
 #3.1
 class Department_list
-  def initialize
+  def initialize(*list)
     @dep_list = Array.new
+    #2
+    list.each { |i| add_note(i) }
+    @index = 0
+  end
+  #2
+  def add_note(dep)
+    @dep_list.append(dep)
+  end
+  def choose_note(index)
+    @index = index
+  end
+  def change_note(new_dep)
+    @dep_list[@index] = new_dep
+  end
+  def get_note
+    @dep_list[@index]
+  end
+  def delete_note
+    @dep_list.delete_at(@index)
+  end
+  def to_s
+    s = "\n"
+    @dep_list.each_index { |i| s += "#{i})))  "+@dep_list[i].to_s }
+    s
   end
 end
+
+
+
+=begin
+a = Department_list.new(dep_j,dep_s)
+a.add_note(dep_d)
+a.add_note(dep_e)
+puts "Все:", a
+a.choose_note(2)
+a.change_note(dep_j)
+puts "Измененная:", a.get_note
+a.choose_note(0)
+a.delete_note
+puts "После удаления:", a
+=end
