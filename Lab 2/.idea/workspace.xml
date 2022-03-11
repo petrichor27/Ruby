@@ -10,6 +10,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -83,7 +90,10 @@
       <workItem from="1646058845209" duration="133000" />
       <workItem from="1646160334028" duration="8221000" />
       <workItem from="1646223247770" duration="4435000" />
-      <workItem from="1646727716270" duration="25682000" />
+      <workItem from="1646727716270" duration="26047000" />
+      <workItem from="1646768463030" duration="210000" />
+      <workItem from="1646827681662" duration="2110000" />
+      <workItem from="1647000619434" duration="707000" />
     </task>
     <servers />
   </component>
@@ -91,6 +101,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab_2@main.rcov" NAME="main Coverage Results" MODIFIED="1646762964399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
+    <SUITE FILE_PATH="coverage/Lab_2@main.rcov" NAME="main Coverage Results" MODIFIED="1647001256532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
   </component>
 </project>

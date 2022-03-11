@@ -43,6 +43,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last.edited.regexp" value="aw30 февраля 2009da" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -93,6 +94,7 @@
       <workItem from="1644597442923" duration="1000" />
       <workItem from="1644693807241" duration="2000" />
       <workItem from="1644947570262" duration="41000" />
+      <workItem from="1645014309204" duration="3162000" />
     </task>
     <servers />
   </component>
@@ -100,6 +102,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab_1@main.rcov" NAME="main Coverage Results" MODIFIED="1644410412922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 1" />
+    <SUITE FILE_PATH="coverage/Lab_1@main.rcov" NAME="main Coverage Results" MODIFIED="1645017372257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 1" />
   </component>
 </project>

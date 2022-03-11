@@ -4,7 +4,7 @@
 #1.2
 
 
-#puts "Привет, " + ARGV[0]
+# puts "Привет, " + ARGV[0]
 
 
 #1.3
@@ -18,7 +18,7 @@ lang=gets.chop
 #var 1
 =begin
 if lang=="ruby"
-  then puts("Ты подлиза!")
+then puts("Ты подлиза!")
 else
   if lang=="c#" or lang=="c++"
   then puts("Как скучно!")
@@ -67,6 +67,7 @@ puts "Введите команду Ruby:"
 com2 = gets.chop
 puts eval(com2)
 =end
+
 
 
 #2.1
@@ -450,7 +451,7 @@ def finddate str
   res
 end
 
-puts finddate "ahdbywga31 мая 2007щжфыав ihwd 11 января 192801 июня 2012sf31 февраля 2008"
+# puts finddate "ahdbywga31 мая 2007щжфыав ihwd 11 января 192801 июня 2012sf31 февраля 2008"
 
 #5.3
 # 2
