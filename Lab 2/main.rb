@@ -123,7 +123,7 @@ dep.choose_post(1)
 dep.update_post(post_1)
 dep.delete_post
 
-puts dep.vak_posts
+puts dep.post_list
 
 
 
