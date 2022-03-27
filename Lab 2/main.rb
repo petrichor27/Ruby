@@ -123,8 +123,9 @@ dep.choose_post(1)
 dep.update_post(post_1)
 dep.delete_post
 
-puts dep.post_list
-
+puts dep
+puts "\n\nВакантные должности:\n",dep.vak_posts
+puts "\n\nВсе должности:\n",dep.post_list
 
 
 
