@@ -1,0 +1,18 @@
+--- !ruby/object:Post_list
+post_list:
+- !ruby/object:Post
+  otdel: IT
+  name: Программист
+  oklad: 55000
+  vakantnost: 0
+- !ruby/object:Post
+  otdel: IT
+  name: Уборщица
+  oklad: 15000
+  vakantnost: 1
+- !ruby/object:Post
+  otdel: Инженерный
+  name: Инженер
+  oklad: 50000
+  vakantnost: 1
+index: 0
