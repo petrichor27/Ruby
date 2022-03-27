@@ -3,15 +3,17 @@ require 'yaml/store'
 
 #1.1
 class Department
-  def initialize (name, phone, *duties)
+  def initialize (name, phone, posts, *duties)
     @duties = duties
     @name = name
     @index = 0
     self.phone=phone
+    @post_list = posts
   end
 
   attr_accessor :name
   attr_reader :phone
+  attr_accessor :post_list
 
   def phone=(phone)
     if Department.check_phone?(phone)
@@ -22,7 +24,7 @@ class Department
 
   #1.2
   def to_s
-    "Name: #{name} ; Phone: #{phone}; \nDuties:\n#{duties}\n"
+    "Name: #{name} ; Phone: #{phone}; \nDuties:\n#{duties}\nPosts:#{post_list}\n"
   end
 
   #1.3

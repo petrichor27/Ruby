@@ -108,13 +108,14 @@ puts "sorted",c
 
 post_1 = Post.new("IT","Программист",55000,0)
 post_2 = Post.new("IT","Уборщица",15000,1)
-post_3 = Post.new("Инженерный","Инженер",50000,1)
+post_3 = Post.new("IT","Инженер",50000,1)
 # puts post_1
 post_list = Post_list.new(post_1,post_2,post_3)
-Post_list.to_yaml("Post.yaml",post_list)
-post_l = Post_list.from_yaml "Post.yaml"
-puts post_l
-
+#Post_list.to_yaml("Post.yaml",post_list)
+#post_l = Post_list.from_yaml "Post.yaml"
+#puts post_l
+dep = Department.new("IT","8(123)1223777",post_list,"ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment")
+puts dep
 
 
 
