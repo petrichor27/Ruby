@@ -1,5 +1,7 @@
+current_path = File.dirname(__FILE__)
 require 'yaml'
 require 'yaml/store'
+require "#{current_path}/Department.rb"
 
 #3.1
 class Department_list
@@ -29,6 +31,7 @@ class Department_list
 
   def delete_note
     @dep_list.delete_at(@index)
+    @index-=1
   end
 
   def to_s

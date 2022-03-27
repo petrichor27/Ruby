@@ -41,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last.edited.regexp" value="&quot;Department of energy&quot;, 8(123)4523432, (&quot;command of the armed forces&quot;)" />
+    <property name="last.edited.regexp" value="*adq32,.-*" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab 1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -93,7 +93,10 @@
       <workItem from="1646727716270" duration="26047000" />
       <workItem from="1646768463030" duration="210000" />
       <workItem from="1646827681662" duration="2110000" />
-      <workItem from="1647000619434" duration="707000" />
+      <workItem from="1647000619434" duration="4434000" />
+      <workItem from="1647192897190" duration="1000" />
+      <workItem from="1648037520419" duration="4192000" />
+      <workItem from="1648372140329" duration="2002000" />
     </task>
     <servers />
   </component>
@@ -101,6 +104,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab_2@main.rcov" NAME="main Coverage Results" MODIFIED="1647001256532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
+    <SUITE FILE_PATH="coverage/main_rb@main.rcov" NAME="main Coverage Results" MODIFIED="1648373746034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
+    <SUITE FILE_PATH="coverage/Lab_2@main.rcov" NAME="main Coverage Results" MODIFIED="1647005092907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
   </component>
 </project>

@@ -3,7 +3,8 @@ require 'yaml'
 require 'yaml/store'
 require "#{current_path}/Department.rb"
 require "#{current_path}/Department_list.rb"
-
+require "#{current_path}/Post.rb"
+require "#{current_path}/Post_list.rb"
 
 #1.2
 =begin
@@ -103,3 +104,18 @@ puts "d", d
 c.sort_notes_by_name!
 puts "sorted",c
 =end
+
+
+post_1 = Post.new("IT","Программист",55000,0)
+post_2 = Post.new("IT","Уборщица",15000,1)
+post_3 = Post.new("Инженерный","Инженер",50000,1)
+# puts post_1
+post_list = Post_list.new(post_1,post_2,post_3)
+Post_list.to_yaml("Post.yaml",post_list)
+post_l = Post_list.from_yaml "Post.yaml"
+puts post_l
+
+
+
+
+
