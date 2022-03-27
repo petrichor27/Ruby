@@ -12,7 +12,6 @@ class Department
     @index_duty = 0
     self.phone=phone
     @post_list = posts
-
   end
 
   attr_accessor :name
@@ -129,6 +128,9 @@ class Department
     a + l
   end
 
+  def count_vak
+    @post_list.find_vak_posts.length
+  end
 end
 
 def ask_which_duty(dep)

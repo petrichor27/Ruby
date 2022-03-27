@@ -108,17 +108,21 @@ puts "sorted",c
 
 post_1 = Post.new("IT","Программист",55000,0)
 post_2 = Post.new("IT","Уборщица",15000,0)
-post_3 = Post.new("IT","Инженер",50000,1)
+post_3 = Post.new("IT","Инженер",50000,0)
 post_4 = Post.new("HR","Уборщица",15000,0)
 post_5 = Post.new("HR","Менеджер",60000,1)
+post_6 = Post.new("Рекламный","Уборщица",15000,0)
+post_7 = Post.new("Рекламный","Менеджер",60000,0)
 
 post_list1 = Post_list.new(post_1,post_2,post_3)
 post_list2 = Post_list.new(post_4,post_5)
+post_list3 = Post_list.new(post_6,post_7)
 
 dep_1 = Department.new("IT","8(123)1223777",post_list1,["ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment"])
-dep_2 = Department.new("HR","8(123)1223777",post_list2,["1111","22222"])
+dep_2 = Department.new("HR","8(123)1225437",post_list2,["1111","22222"])
+dep_3 = Department.new("Рекламный","8(123)1443277",post_list3,["1234","2656422"])
 
-deps = Department_list.new(dep_1,dep_2)
+deps = Department_list.new(dep_1,dep_2,dep_3)
 
 #5.5
 # dep_1.set_post(post_1)
@@ -144,4 +148,6 @@ deps = Department_list.new(dep_1,dep_2)
 
 # yaml_to_file "Post.yaml",post_1.to_yaml
 # puts Post.from_yaml("Post.yaml")
+
+puts deps.sort_by_vak_count!
 
