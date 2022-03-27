@@ -3,12 +3,13 @@ require 'yaml/store'
 
 #1.1
 class Department
-  def initialize (name, phone, posts, *duties)
+  def initialize (name, phone, posts = Post_list.new(), duties)
     @duties = duties
     @name = name
-    @index = 0
+    @index_duty = 0
     self.phone=phone
     @post_list = posts
+
   end
 
   attr_accessor :name
@@ -24,7 +25,7 @@ class Department
 
   #1.2
   def to_s
-    "Name: #{name} ; Phone: #{phone}; \nDuties:\n#{duties}\nPosts:#{post_list}\n"
+    "Name: #{name}\nPhone: #{phone}; \nDuties:\n#{duties}\nPosts:#{post_list}\n"
   end
 
   #1.3
@@ -33,20 +34,20 @@ class Department
   end
 
   def choose_duty(index)
-    @index = index
+    @index_duty = index
   end
 
   def delete_duty
-    @duties.delete(@duties[@index])
-    @index -=1
+    @duties.delete(@duties[@index_duty])
+    @index_duty -=1
   end
 
   def get_duty
-    @duties[@index]
+    @duties[@index_duty]
   end
 
   def update_duty(new)
-    @duties[@index] = new
+    @duties[@index_duty] = new
   end
 
   def duties
@@ -54,6 +55,27 @@ class Department
     @duties.each_index { |i| s += "#{i}) #{@duties[i]}\n" }
     s
   end
+
+  def set_post(val)
+    @post_list.add_note(val)
+  end
+
+  def choose_post(index)
+    @post_list.choose_note(index)
+  end
+
+  def delete_post
+    @post_list.delete_note
+  end
+
+  def get_post
+    @post_list.get_note
+  end
+
+  def update_post(new)
+    @post_list.change_note(new)
+  end
+
 
   #1.5
   def Department.check_phone?(phone)

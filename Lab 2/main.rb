@@ -114,7 +114,14 @@ post_list = Post_list.new(post_1,post_2,post_3)
 #Post_list.to_yaml("Post.yaml",post_list)
 #post_l = Post_list.from_yaml "Post.yaml"
 #puts post_l
-dep = Department.new("IT","8(123)1223777",post_list,"ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment")
+dep = Department.new("IT","8(123)1223777",["ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment"])
+dep.set_post(post_1)
+dep.set_post(post_2)
+dep.set_post(post_2)
+dep.set_post(post_3)
+dep.choose_post(1)
+dep.update_post(post_1)
+dep.delete_post
 puts dep
 
 

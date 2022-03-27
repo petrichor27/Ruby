@@ -15,22 +15,23 @@ class Post
   def vakantnost=(vak)
     if Post.check_vak?(vak)
       @vakantnost = vak
-    else raise ArgumentError.new("Vakantnost должна быть 0 или 1s!")
+    else raise ArgumentError.new("Vakantnost должна быть 0 или 1!")
     end
   end
 
   def Post.check_vak?(vak)
     vak == (0 || 1)
   end
-  def Post.word_vak
-    if @vakantnost
+
+  def word_vak
+    if @vakantnost == 1
       "Занята"
     else "Свободна"
     end
   end
 
   def to_s
-    "Отдел: #{otdel};\nНазвание: #{name};\nОклад: #{oklad};\nДолжность: #{Post.word_vak}"
+    "Отдел: #{otdel};\nНазвание: #{name};\nОклад: #{oklad};\nДолжность: #{word_vak}"
   end
 
 end
