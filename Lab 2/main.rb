@@ -109,23 +109,39 @@ puts "sorted",c
 post_1 = Post.new("IT","Программист",55000,0)
 post_2 = Post.new("IT","Уборщица",15000,0)
 post_3 = Post.new("IT","Инженер",50000,1)
-# puts post_1
-post_list = Post_list.new(post_1,post_2,post_3)
-#Post_list.to_yaml("Post.yaml",post_list)
-#post_l = Post_list.from_yaml "Post.yaml"
-#puts post_l
-dep = Department.new("IT","8(123)1223777",["ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment"])
-dep.set_post(post_1)
-dep.set_post(post_2)
-dep.set_post(post_2)
-dep.set_post(post_3)
-dep.choose_post(1)
-dep.update_post(post_1)
-dep.delete_post
+post_4 = Post.new("HR","Уборщица",15000,0)
+post_5 = Post.new("HR","Менеджер",60000,1)
 
-puts dep
-puts "\n\nВакантные должности:\n",dep.vak_posts
-puts "\n\nВсе должности:\n",dep.post_list
+post_list1 = Post_list.new(post_1,post_2,post_3)
+post_list2 = Post_list.new(post_4,post_5)
 
+dep_1 = Department.new("IT","8(123)1223777",post_list1,["ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment"])
+dep_2 = Department.new("HR","8(123)1223777",post_list2,["1111","22222"])
 
+deps = Department_list.new(dep_1,dep_2)
+
+#5.5
+# dep_1.set_post(post_1)
+# dep_1.set_post(post_2)
+# dep_1.set_post(post_2)
+# dep_1.set_post(post_3)
+# dep_1.choose_post(1)
+# dep_1.update_post(post_1)
+# dep_1.delete_post
+# puts dep_1
+# puts "\n\nВакантные должности:\n",dep_1.vak_posts
+# puts "\n\nВсе должности:\n",dep_1.post_list
+
+#5.6
+# yaml_to_file "Post.yaml",deps.to_yaml
+# puts Department_list.deserialize_yaml("Post.yaml")
+
+# yaml_to_file "Post.yaml",dep_1.to_yaml
+# puts Department.deserialize_yaml("Post.yaml")
+
+# yaml_to_file "Post.yaml",post_list1.to_yaml
+# puts Post_list.deserialize_yaml("Post.yaml")
+
+# yaml_to_file "Post.yaml",post_1.to_yaml
+# puts Post.from_yaml("Post.yaml")
 

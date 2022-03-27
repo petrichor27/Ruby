@@ -96,7 +96,8 @@
       <workItem from="1647000619434" duration="4434000" />
       <workItem from="1647192897190" duration="1000" />
       <workItem from="1648037520419" duration="4192000" />
-      <workItem from="1648372140329" duration="11290000" />
+      <workItem from="1648372140329" duration="30103000" />
+      <workItem from="1648412051506" duration="1924000" />
     </task>
     <servers />
   </component>
@@ -104,7 +105,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/main_rb@main.rcov" NAME="main Coverage Results" MODIFIED="1648391103883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
+    <SUITE FILE_PATH="coverage/main_rb@main.rcov" NAME="main Coverage Results" MODIFIED="1648413562220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
     <SUITE FILE_PATH="coverage/Lab_2@main.rcov" NAME="main Coverage Results" MODIFIED="1647005092907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 2" />
   </component>
 </project>

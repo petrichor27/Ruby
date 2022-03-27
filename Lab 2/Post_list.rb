@@ -1,3 +1,10 @@
+current_path = File.dirname(__FILE__)
+require 'yaml'
+require 'yaml/store'
+require "#{current_path}/Department.rb"
+require "#{current_path}/Post.rb"
+require "#{current_path}/Department_list.rb"
+
 class Post_list
   def initialize(*list)
     @post_list = Array.new
@@ -34,7 +41,7 @@ class Post_list
 
   def to_s
     s = "\n"
-    @post_list.each_index { |i| s += "#{i})))"+@post_list[i].to_s+"\n\n"}
+    @post_list.each_index { |i| s += "#{i}]"+@post_list[i].to_s+"\n\n"}
     s
   end
 
@@ -77,6 +84,7 @@ class Post_list
     end
   end
 
+=begin
   def Post_list.from_yaml(file)
     store = YAML::Store.new file
     arr_lines = ""
@@ -96,11 +104,25 @@ class Post_list
       f.puts YAML.dump(post)
     end
   end
+=end
 
-  #3.4
   def Post_list.deserialize_yaml(file)
-    @index = 0
-    @post_list = Post_list.from_yaml(file)
+    arr = Post.from_yaml(file)
+    p = Post_list.new
+    arr.each { |i| p.add_note(i) }
+    p
+  end
+
+  def to_yaml
+    s="--- !ruby/object:Post_list\npost_list:\n"
+    @post_list.each do |p|
+      a = p.to_yaml[2..p.to_yaml.length-1]
+      l = ""
+      a.each_line { |line| l += "  " + line }
+      l[0..1] = ""
+      s += l
+      end
+    s + "index: 0"
   end
 
   def Post_list.deserialize_txt(file)
@@ -108,7 +130,6 @@ class Post_list
     @post_list = Post_list.from_txt(file)
   end
 
-  #5
   def sort_notes_by_name!
     @post_list.sort! {|a, b| a.name <=> b.name}
   end

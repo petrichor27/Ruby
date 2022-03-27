@@ -2,7 +2,8 @@ current_path = File.dirname(__FILE__)
 require 'yaml'
 require 'yaml/store'
 require "#{current_path}/Department.rb"
-
+require "#{current_path}/Post.rb"
+require "#{current_path}/Post_list.rb"
 #3.1
 class Department_list
   def initialize(*list)
@@ -36,7 +37,7 @@ class Department_list
 
   def to_s
     s = "\n"
-    @dep_list.each_index { |i| s += "#{i})))  "+@dep_list[i].to_s }
+    @dep_list.each_index { |i| s += "#{i}}  "+@dep_list[i].to_s }
     s
   end
 
@@ -53,7 +54,7 @@ class Department_list
         phone = reg_phone.match(line).to_s
         duties = reg_duties.match(line).to_s
         d = Department.find_duties(duties)
-        dep = Department.new(name, phone)
+        dep = Department.new(name, phone,[])
         (0..d.length-1).each { |x| dep.set_duty(d[x]) }
         deps.add_note(dep)
       end
@@ -89,10 +90,15 @@ class Department_list
     d
   end
 
-  def Department_list.to_yaml(file, deps)
-    File.open(file,"w") do |f|
-      f.puts YAML.dump(deps)
+  def to_yaml
+    s = ""
+    @dep_list.each do |d|
+      a = d.to_yaml[4..d.to_yaml.length-1]+"\n"
+      l=""
+      a.each_line { |line| l+="  "+line }
+      s+="- "+l[2..l.length-1]
     end
+    "--- !ruby/object:Department_list\ndep_list:\n" + s + "index: 0"
   end
 
   #3.4

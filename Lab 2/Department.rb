@@ -1,11 +1,14 @@
+current_path = File.dirname(__FILE__)
 require 'yaml'
 require 'yaml/store'
-
+require "#{current_path}/Department_list.rb"
+require "#{current_path}/Post.rb"
+require "#{current_path}/Post_list.rb"
 #1.1
 class Department
-  def initialize (name, phone, posts = Post_list.new(), duties)
-    @duties = duties
+  def initialize (name, phone, posts = Post_list.new, duties)
     @name = name
+    @duties = duties
     @index_duty = 0
     self.phone=phone
     @post_list = posts
@@ -100,6 +103,32 @@ class Department
     end
     d
   end
+
+  def Department.from_yaml(file)
+    store = YAML::Store.new file
+    deps = ""
+    File.open(file,"r") do |f|
+      while (line = f.gets)
+        deps+= line
+      end
+    end
+    store.load(deps)
+  end
+
+  def Department.deserialize_yaml(file)
+    Department.from_yaml(file)
+  end
+
+  def to_yaml
+    d = Department.new(@name,@phone,@duties)
+    a = YAML.dump(d)
+    a[-15..-2]=""
+    t=@post_list.to_yaml[38..@post_list.to_yaml.length-1]
+    l=""
+    t.each_line { |line| l+="  "+line }
+    a + l
+  end
+
 end
 
 def ask_which_duty(dep)
@@ -110,8 +139,6 @@ def ask_which_duty(dep)
 end
 
 #2.2
-
-
 def read_from_txt(file)
   reg_name = /^"[\w| |,|.]+/
   reg_phone = /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
@@ -124,7 +151,7 @@ def read_from_txt(file)
       phone = reg_phone.match(line).to_s
       duties = reg_duties.match(line).to_s
       d = Department.find_duties(duties)
-      dep = Department.new(name, phone)
+      dep = Department.new(name, phone,[])
       (0..d.length-1).each { |x| dep.set_duty(d[x]) }
       deps.append(dep)
     end
@@ -132,10 +159,12 @@ def read_from_txt(file)
   deps
 end
 
+=begin
 #2.3
 def print_deps(deps)
   deps.each { |x| puts(x) }
 end
+=end
 
 #2.4
 def write_to_txt(file, deps)
@@ -146,6 +175,7 @@ def write_to_txt(file, deps)
   end
 end
 
+=begin
 #2.6
 def write_to_yaml(file, deps)
   File.open(file,"w") do |f|
@@ -164,5 +194,5 @@ def read_from_yaml(file)
   end
   store.load(deps)
 end
-
+=end
 

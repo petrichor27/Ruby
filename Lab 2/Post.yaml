@@ -1,18 +1,48 @@
---- !ruby/object:Post_list
-post_list:
-- !ruby/object:Post
-  otdel: IT
-  name: Программист
-  oklad: 55000
-  vakantnost: 0
-- !ruby/object:Post
-  otdel: IT
-  name: Уборщица
-  oklad: 15000
-  vakantnost: 1
-- !ruby/object:Post
-  otdel: Инженерный
-  name: Инженер
-  oklad: 50000
-  vakantnost: 1
+--- !ruby/object:Department_list
+dep_list:
+- !ruby/object:Department
+  name: IT
+  duties:
+  - ensuring proper operation and trouble-free operation
+  - maintenance of computers, organizational, computing equipment, server equipment
+  index_duty: 0
+  phone: 8(123)1223777
+  post_list: !ruby/object:Post_list
+    post_list:
+    - !ruby/object:Post
+      otdel: IT
+      name: Программист
+      oklad: 55000
+      vakantnost: 0
+    - !ruby/object:Post
+      otdel: IT
+      name: Уборщица
+      oklad: 15000
+      vakantnost: 0
+    - !ruby/object:Post
+      otdel: IT
+      name: Инженер
+      oklad: 50000
+      vakantnost: 1
+    index: 0
+- !ruby/object:Department
+  name: HR
+  duties:
+  - '1111'
+  - '22222'
+  index_duty: 0
+  phone: 8(123)1223777
+  post_list: !ruby/object:Post_list
+    post_list:
+    - !ruby/object:Post
+      otdel: HR
+      name: Уборщица
+      oklad: 15000
+      vakantnost: 0
+    - !ruby/object:Post
+      otdel: HR
+      name: Менеджер
+      oklad: 60000
+      vakantnost: 1
+    index: 0
 index: 0
