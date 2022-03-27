@@ -107,7 +107,7 @@ puts "sorted",c
 
 
 post_1 = Post.new("IT","Программист",55000,0)
-post_2 = Post.new("IT","Уборщица",15000,1)
+post_2 = Post.new("IT","Уборщица",15000,0)
 post_3 = Post.new("IT","Инженер",50000,1)
 # puts post_1
 post_list = Post_list.new(post_1,post_2,post_3)
@@ -122,7 +122,8 @@ dep.set_post(post_3)
 dep.choose_post(1)
 dep.update_post(post_1)
 dep.delete_post
-puts dep
+
+puts dep.vak_posts
 
 
 

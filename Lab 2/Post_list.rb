@@ -5,6 +5,12 @@ class Post_list
     @index = 0
   end
 
+  def find_vak_posts
+    vak_posts = Array.new
+    @post_list.each { |p| if p.vakantnost == 0 then vak_posts.append(p) end }
+    vak_posts
+  end
+
   def add_note(post)
     @post_list.append(post)
   end
@@ -28,7 +34,7 @@ class Post_list
 
   def to_s
     s = "\n"
-    @post_list.each_index { |i| s += "#{i})))\n"+@post_list[i].to_s+"\n\n"}
+    @post_list.each_index { |i| s += "#{i})))"+@post_list[i].to_s+"\n\n"}
     s
   end
 

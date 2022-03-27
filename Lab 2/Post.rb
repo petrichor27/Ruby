@@ -31,7 +31,7 @@ class Post
   end
 
   def to_s
-    "Отдел: #{otdel};\nНазвание: #{name};\nОклад: #{oklad};\nДолжность: #{word_vak}"
+    "\nОтдел: #{otdel};\nНазвание: #{name};\nОклад: #{oklad};\nДолжность: #{word_vak}"
   end
 
 end

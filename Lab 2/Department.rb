@@ -76,6 +76,9 @@ class Department
     @post_list.change_note(new)
   end
 
+  def vak_posts
+    @post_list.find_vak_posts
+  end
 
   #1.5
   def Department.check_phone?(phone)
