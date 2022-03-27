@@ -27,7 +27,7 @@ class Department
 
   #1.2
   def to_s
-    "Name: #{name}\nPhone: #{phone}; \nDuties:\n#{duties}\nPosts:#{post_list}\n"
+    "Name: #{name}\nPhone: #{phone}; \nDuties:\n#{duties}Posts:\n#{list_post}\n"
   end
 
   #1.3
@@ -82,6 +82,7 @@ class Department
     @post_list.find_vak_posts
   end
 
+
   #1.5
   def Department.check_phone?(phone)
     /8\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/ =~ phone
@@ -130,6 +131,16 @@ class Department
 
   def count_vak
     @post_list.find_vak_posts.length
+  end
+
+  def list_post
+    s = ""
+    @post_list.each { |p| s += @post_list.index(p).to_s + ". " + p.name + "; должность: " + p.word_vak + "\n" }
+    s
+  end
+
+  def to_s_big
+    "Name: #{name}\nPhone: #{phone}; \nDuties:\n#{duties}Posts:\n#{post_list}\n"
   end
 end
 

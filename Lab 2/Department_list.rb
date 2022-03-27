@@ -121,5 +121,11 @@ class Department_list
     @dep_list.sort! { |a, b| b.count_vak <=> a.count_vak }
   end
   #1 = должность занята, поэтому сортировка по количеству 0
+
+  def to_s_big
+    s = "\n"
+    @dep_list.each_index { |i| s += "#{i}}  "+@dep_list[i].to_s_big }
+    s
+  end
 end
 

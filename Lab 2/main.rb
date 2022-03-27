@@ -107,7 +107,7 @@ puts "sorted",c
 
 
 post_1 = Post.new("IT","Программист",55000,0)
-post_2 = Post.new("IT","Уборщица",15000,0)
+post_2 = Post.new("IT","Уборщица",15000,1)
 post_3 = Post.new("IT","Инженер",50000,0)
 post_4 = Post.new("HR","Уборщица",15000,0)
 post_5 = Post.new("HR","Менеджер",60000,1)
@@ -149,5 +149,10 @@ deps = Department_list.new(dep_1,dep_2,dep_3)
 # yaml_to_file "Post.yaml",post_1.to_yaml
 # puts Post.from_yaml("Post.yaml")
 
-puts deps.sort_by_vak_count!
+#6.1
+# puts deps.sort_by_vak_count!
 
+#6.2
+# puts dep_1.list_post
+# puts deps
+# puts deps.to_s_big

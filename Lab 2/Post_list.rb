@@ -75,6 +75,9 @@ class Post_list
       yield post
     end
   end
+  def index(el)
+    @post_list.index(el)
+  end
 
   def Post_list.to_txt(file, post_list)
     File.open(file,"w") do |f|
