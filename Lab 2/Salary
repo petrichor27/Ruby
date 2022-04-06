@@ -47,5 +47,17 @@ class Percent_sal < Fix_sal
     else super
     end
   end
-  
+
+end
+
+class Rub_percent_sal < Percent_sal
+  def initialize(sal,nadb_rub,nadb_perc)
+    super(sal,nadb_perc)
+    @add_rub = nadb_rub
+  end
+
+  def get_salary
+    super + @add_rub
+  end
+
 end
