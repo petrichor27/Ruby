@@ -11,6 +11,16 @@ class Salary
 
   end
   def get_salary
-    
+
+  end
+end
+
+class Fix_sal < Salary
+  def initialize(sal)
+    @fixed = sal
+  end
+
+  def get_salary
+    @fixed
   end
 end
