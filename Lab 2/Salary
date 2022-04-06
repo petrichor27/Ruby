@@ -7,9 +7,6 @@ require "#{current_path}/Post_list.rb"
 require "#{current_path}/Post.rb"
 
 class Salary
-  def initialize
-
-  end
   def get_salary
 
   end
@@ -22,5 +19,16 @@ class Fix_sal < Salary
 
   def get_salary
     @fixed
+  end
+end
+
+class Rub_sal < Fix_sal
+  def initialize(sal,nadbavka)
+    super(sal)
+    @add_rub = nadbavka
+  end
+
+  def get_salary
+    super + @add_rub
   end
 end
