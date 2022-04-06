@@ -32,3 +32,20 @@ class Rub_sal < Fix_sal
     super + @add_rub
   end
 end
+
+class Percent_sal < Fix_sal
+  def initialize(sal,nadbavka)
+    super(sal)
+    @add_percent = nadbavka
+  end
+
+  def get_salary
+    prng = Random.new
+    a = prng.rand(0..1)
+    if a == 1
+      super + @add_percent
+    else super
+    end
+  end
+  
+end
