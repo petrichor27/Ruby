@@ -1,0 +1,16 @@
+current_path = File.dirname(__FILE__)
+require 'yaml'
+require 'yaml/store'
+require "#{current_path}/Department.rb"
+require "#{current_path}/Department_list.rb"
+require "#{current_path}/Post_list.rb"
+require "#{current_path}/Post.rb"
+
+class Salary
+  def initialize
+
+  end
+  def get_salary
+    
+  end
+end

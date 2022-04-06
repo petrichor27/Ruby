@@ -106,23 +106,23 @@ puts "sorted",c
 =end
 
 
-post_1 = Post.new("IT","Программист",55000,0)
-post_2 = Post.new("IT","Уборщица",15000,1)
-post_3 = Post.new("IT","Инженер",50000,0)
-post_4 = Post.new("HR","Уборщица",15000,0)
-post_5 = Post.new("HR","Менеджер",60000,1)
-post_6 = Post.new("Рекламный","Уборщица",15000,0)
-post_7 = Post.new("Рекламный","Менеджер",60000,0)
-
-post_list1 = Post_list.new(post_1,post_2,post_3)
-post_list2 = Post_list.new(post_4,post_5)
-post_list3 = Post_list.new(post_6,post_7)
-
-dep_1 = Department.new("IT","8(123)1223777",post_list1,["ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment"])
-dep_2 = Department.new("HR","8(123)1225437",post_list2,["1111","22222"])
-dep_3 = Department.new("Рекламный","8(123)1443277",post_list3,["1234","2656422"])
-
-deps = Department_list.new(dep_1,dep_2,dep_3)
+# post_1 = Post.new("IT","Программист",55000,0)
+# post_2 = Post.new("IT","Уборщица",15000,1)
+# post_3 = Post.new("IT","Инженер",50000,0)
+# post_4 = Post.new("HR","Уборщица",15000,0)
+# post_5 = Post.new("HR","Менеджер",60000,1)
+# post_6 = Post.new("Рекламный","Уборщица",15000,0)
+# post_7 = Post.new("Рекламный","Менеджер",60000,0)
+#
+# post_list1 = Post_list.new(post_1,post_2,post_3)
+# post_list2 = Post_list.new(post_4,post_5)
+# post_list3 = Post_list.new(post_6,post_7)
+#
+# dep_1 = Department.new("IT","8(123)1223777",post_list1,["ensuring proper operation and trouble-free operation","maintenance of computers, organizational, computing equipment, server equipment"])
+# dep_2 = Department.new("HR","8(123)1225437",post_list2,["1111","22222"])
+# dep_3 = Department.new("Рекламный","8(123)1443277",post_list3,["1234","2656422"])
+#
+# deps = Department_list.new(dep_1,dep_2,dep_3)
 
 #5.5
 # dep_1.set_post(post_1)
@@ -156,3 +156,34 @@ deps = Department_list.new(dep_1,dep_2,dep_3)
 # puts dep_1.list_post
 # puts deps
 # puts deps.to_s_big
+
+
+
+#----lab 3----
+post_11 = Post.new("IT","Руководитель",75000,0)
+post_12 = Post.new("IT","Программист",55000,0)
+post_13 = Post.new("IT","Web-программист",45000,1)
+post_14 = Post.new("IT","Инженер",50000,0)
+
+post_21 = Post.new("Финансовый отдел","Руководитель",75000,0)
+post_22 = Post.new("Финансовый отдел","Бухгалтер",55000,0)
+post_23 = Post.new("Финансовый отдел","Главный бугалтер",65000,0)
+post_24 = Post.new("Финансовый отдел","Экономист",55000,0)
+
+post_31 = Post.new("HR","Руководитель",75000,0)
+post_32 = Post.new("HR","Рекрутер",30000,1)
+
+post_41 = Post.new("Маркетинговый","Руководитель",75000,0)
+post_42 = Post.new("Маркетинговый","Маркетолог",60000,0)
+
+post_list1 = Post_list.new(post_11,post_12,post_13,post_14)
+post_list2 = Post_list.new(post_21,post_22,post_23,post_24)
+post_list3 = Post_list.new(post_31,post_32)
+post_list4 = Post_list.new(post_41,post_42)
+
+dep_1 = Department.new("IT","8(123)1223777",post_list1,["Поддержка согласованного набора ИТ-услуг","Управление ИТ-проектами","Развитие ИТ-среды компании"])
+dep_2 = Department.new("Финансовый отдел","8(123)12999437",post_list2,["учёт, анализ, планирование и организация бизнес-процессов"," управление денежными потоками", "определение порядка взаиморасчётов и очередности платежей", "контроль платежей и остатков на счетах компании","получение кредитов на выгодных условиях, выпуск ценных бумаг, внедрение факторинга"])
+dep_3 = Department.new("HR","8(123)8523277",post_list3,["Управление эффективностью и уровнем производительности","Поиск и развитие талантов"])
+dep_4 = Department.new("Маркетинговый","8(123)12312312",post_list4,["анализирует эффективность рекламных кампаний в интернете","мониторит и анализирует работу конкурентов","собирает обратную связь от целевой аудитории со всех каналов коммуникации"])
+
+deps = Department_list.new(dep_1,dep_2,dep_3,dep_4)

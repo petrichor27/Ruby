@@ -56,8 +56,6 @@ class Post
     end
     store.load(posts)
   end
-
-
 end
 
 
