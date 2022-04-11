@@ -61,3 +61,47 @@ class Rub_percent_sal < Percent_sal
   end
 
 end
+
+class Fine_sal < Salary
+  def initialize(sal)
+    @fine = sal
+  end
+
+  def get_salary
+    @fine
+  end
+end
+
+class Fine_rub_sal < Rub_sal
+  def initialize(sal,nadbavka,fine)
+    super(sal,nadbavka)
+    @add_fine = fine
+  end
+
+  def get_salary
+    super - @add_fine
+  end
+end
+
+class Fine_percent_sal < Percent_sal
+  def initialize(sal,fine_rub,nadb_perc)
+    super(sal,nadb_perc)
+    @add_fine = fine_rub
+  end
+
+  def get_salary
+    super - @add_fine
+  end
+
+end
+
+class Fine_rub_percent_sal < Rub_percent_sal
+  def initialize(sal, nadb_rub, nadb_perc,fine)
+    super(sal,nadb_rub,nadb_perc)
+    @add_fine = fine
+  end
+
+  def get_salary
+    super - @add_fine
+  end
+end
