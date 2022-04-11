@@ -8,7 +8,6 @@ require "#{current_path}/Post.rb"
 
 class Salary
   def get_salary
-
   end
 end
 
@@ -43,7 +42,7 @@ class Percent_sal < Fix_sal
     prng = Random.new
     a = prng.rand(0..1)
     if a == 1
-      super + @add_percent
+      super * @add_percent / 100
     else super
     end
   end
@@ -63,8 +62,8 @@ class Rub_percent_sal < Percent_sal
 end
 
 class Fine_sal < Salary
-  def initialize(sal)
-    @fine = sal
+  def initialize(fine)
+    @fine = fine
   end
 
   def get_salary
@@ -84,9 +83,9 @@ class Fine_rub_sal < Rub_sal
 end
 
 class Fine_percent_sal < Percent_sal
-  def initialize(sal,fine_rub,nadb_perc)
+  def initialize(sal,fine,nadb_perc)
     super(sal,nadb_perc)
-    @add_fine = fine_rub
+    @add_fine = fine
   end
 
   def get_salary
@@ -103,5 +102,93 @@ class Fine_rub_percent_sal < Rub_percent_sal
 
   def get_salary
     super - @add_fine
+  end
+end
+
+class Premium_sal < Fix_sal
+  def initialize(sal,prem)
+    super(sal)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
+  end
+end
+
+class Premium_rub_sal < Rub_sal
+  def initialize(sal, nadbavka,prem)
+    super(sal,nadbavka)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
+  end
+end
+
+class Premium_percent_sal < Percent_sal
+  def initialize(sal, nadb_perc, prem)
+    super(sal,nadb_perc)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
+  end
+end
+
+class Premium_rub_percent_sal < Rub_percent_sal
+  def initialize(sal, nadb_rub, nadb_perc, prem)
+    super(sal, nadb_rub, nadb_perc)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
+  end
+end
+
+class Premium_fine_sal < Fine_sal
+  def initialize(fine, prem)
+    super(fine)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
+  end
+end
+
+class Premium_fine_rub_sal < Fine_rub_sal
+  def initialize(sal, nadb, fine, prem)
+    super(sal, nadb, fine)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
+  end
+end
+
+class Premium_fine_percent_sal < Fine_percent_sal
+  def initialize(sal, nadb_perc, fine, prem)
+    super(sal, fine, nadb_perc)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
+  end
+end
+
+class Premium_fine_rub_percent_sal < Fine_rub_percent_sal
+  def initialize(sal, nadb_rub, nadb_perc, fine, prem)
+    super(sal, nadb_rub, nadb_perc, fine)
+    @prem = prem
+  end
+
+  def get_salary
+    super * @prem / 100
   end
 end
