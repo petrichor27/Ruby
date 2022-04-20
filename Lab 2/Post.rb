@@ -4,7 +4,7 @@ require 'yaml/store'
 require "#{current_path}/Department.rb"
 require "#{current_path}/Department_list.rb"
 require "#{current_path}/Post_list.rb"
-
+require "#{current_path}/Decorators.rb"
 #4.1
 class Post
   def initialize(otdel,name,oklad,vak)
@@ -12,13 +12,25 @@ class Post
     @name = name
     @oklad = oklad
     @vakantnost = vak
+    @salary
 
   end
-
   attr_accessor :otdel
   attr_accessor :name
   attr_accessor :oklad
   attr_reader :vakantnost
+
+  def salary=(oklad_sal: 0,rub_nadb: 0,percent_nadb: 0,fine: 0,premium: 0)
+    @salary = Oklad_sal.new(oklad_sal)
+    @salary = Rub_nadb_decorator.new(@salary,rub_nadb)
+    @salary = Percent_nadb_decorator.new(@salary,percent_nadb)
+    @salary = Fine_decorator.new(@salary,fine)
+    @salary = Premium_decorator.new(@salary,premium)
+  end
+
+  def salary
+    @salary.get_salary
+  end
 
   def vakantnost=(vak)
     if Post.check_vak?(vak)
