@@ -5,7 +5,7 @@ require "#{current_path}/Department.rb"
 require "#{current_path}/Department_list.rb"
 require "#{current_path}/Post.rb"
 require "#{current_path}/Post_list.rb"
-
+require "#{current_path}/Decorators.rb"
 #1.2
 =begin
 dep_j = Department.new("Department of justice", "8(123)1248525","Control of the activities of the notary")
@@ -187,3 +187,13 @@ dep_3 = Department.new("HR","8(123)8523277",post_list3,["Управление э
 dep_4 = Department.new("Маркетинговый","8(123)12312312",post_list4,["анализирует эффективность рекламных кампаний в интернете","мониторит и анализирует работу конкурентов","собирает обратную связь от целевой аудитории со всех каналов коммуникации"])
 
 deps = Department_list.new(dep_1,dep_2,dep_3,dep_4)
+
+s = Oklad_sal.new(1000)
+s1 = Rub_nadb_decorator.new(s,500)
+p s1.get_salary
+s2 = Fine_decorator.new(s1,750)
+p s2.get_salary
+s3 = Percent_nadb_decorator.new(s2,10)
+p s3.get_salary
+s4 = Premium_decorator.new(s3,10)
+p s4.get_salary

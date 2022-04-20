@@ -12,6 +12,7 @@ class Post
     @name = name
     @oklad = oklad
     @vakantnost = vak
+
   end
 
   attr_accessor :otdel
