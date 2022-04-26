@@ -11,21 +11,23 @@ class Post
     @otdel = otdel
     @name = name
     @oklad = oklad
+    @salary = Oklad_sal.new(@oklad)
     @vakantnost = vak
-    @salary
-
   end
+
   attr_accessor :otdel
   attr_accessor :name
   attr_accessor :oklad
   attr_reader :vakantnost
 
-  def salary=(oklad_sal: 0,rub_nadb: 0,percent_nadb: 0,fine: 0,premium: 0)
-    @salary = Oklad_sal.new(oklad_sal)
-    @salary = Rub_nadb_decorator.new(@salary,rub_nadb)
-    @salary = Percent_nadb_decorator.new(@salary,percent_nadb)
-    @salary = Fine_decorator.new(@salary,fine)
-    @salary = Premium_decorator.new(@salary,premium)
+  def set_salary(rub_nadb: 0,percent_nadb: 0,fine: 0,premium: 0) #salary=
+    if @vakantnost == 1
+      @salary = Rub_nadb_decorator.new(@salary,rub_nadb)
+      @salary = Percent_nadb_decorator.new(@salary,percent_nadb)
+      @salary = Fine_decorator.new(@salary,fine)
+      @salary = Premium_decorator.new(@salary,premium)
+    else raise ArgumentError.new("Должность свободна, некому делать надбавки!")
+    end
   end
 
   def salary
@@ -51,7 +53,7 @@ class Post
   end
 
   def to_s
-    "\nОтдел: #{otdel};\nНазвание: #{name};\nОклад: #{oklad};\nДолжность: #{word_vak}"
+    "\nОтдел: #{otdel};\nНазвание: #{name};\nОклад: #{oklad};\nДолжность: #{word_vak};\nИтоговая зарплата: #{salary}"
   end
 
   def to_yaml

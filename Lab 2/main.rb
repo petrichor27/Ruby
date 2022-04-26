@@ -160,8 +160,20 @@ puts "sorted",c
 
 
 #----lab 3----
-post_11 = Post.new("IT","Руководитель",75000,0)
-post_12 = Post.new("IT","Программист",55000,0)
+=begin
+s = Oklad_sal.new(1000)
+s1 = Rub_nadb_decorator.new(s,500)
+p s1.get_salary
+s2 = Fine_decorator.new(s1,750)
+p s2.get_salary
+s3 = Percent_nadb_decorator.new(s2,10)
+p s3.get_salary
+s4 = Premium_decorator.new(s3,10)
+p s4.get_salary
+=end
+
+post_11 = Post.new("IT","Руководитель",75000,1)
+post_12 = Post.new("IT","Программист",55000,1)
 post_13 = Post.new("IT","Web-программист",45000,1)
 post_14 = Post.new("IT","Инженер",50000,0)
 
@@ -188,12 +200,11 @@ dep_4 = Department.new("Маркетинговый","8(123)12312312",post_list4,
 
 deps = Department_list.new(dep_1,dep_2,dep_3,dep_4)
 
-s = Oklad_sal.new(1000)
-s1 = Rub_nadb_decorator.new(s,500)
-p s1.get_salary
-s2 = Fine_decorator.new(s1,750)
-p s2.get_salary
-s3 = Percent_nadb_decorator.new(s2,10)
-p s3.get_salary
-s4 = Premium_decorator.new(s3,10)
-p s4.get_salary
+post_11.set_salary(rub_nadb: 1000,fine: 200)
+post_12.set_salary(rub_nadb: 1000)
+post_13.set_salary(rub_nadb: 1000,premium: 20)
+#post_14.set_salary(percent_nadb: 10,premium: 10)
+puts post_list1
+# post_list1.to_yaml
+yaml_to_file "Post.yaml",post_list1.to_yaml
+puts Post_list.deserialize_yaml("Post.yaml")
