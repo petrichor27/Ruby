@@ -176,15 +176,12 @@ post_11 = Post.new("IT","Руководитель",75000,1)
 post_12 = Post.new("IT","Программист",55000,1)
 post_13 = Post.new("IT","Web-программист",45000,1)
 post_14 = Post.new("IT","Инженер",50000,0)
-
 post_21 = Post.new("Финансовый отдел","Руководитель",75000,0)
 post_22 = Post.new("Финансовый отдел","Бухгалтер",55000,0)
 post_23 = Post.new("Финансовый отдел","Главный бугалтер",65000,0)
 post_24 = Post.new("Финансовый отдел","Экономист",55000,0)
-
 post_31 = Post.new("HR","Руководитель",75000,0)
 post_32 = Post.new("HR","Рекрутер",30000,1)
-
 post_41 = Post.new("Маркетинговый","Руководитель",75000,0)
 post_42 = Post.new("Маркетинговый","Маркетолог",60000,0)
 
@@ -204,7 +201,6 @@ post_11.set_salary(rub_nadb: 1000,fine: 200)
 post_12.set_salary(rub_nadb: 1000)
 post_13.set_salary(rub_nadb: 1000,premium: 20)
 #post_14.set_salary(percent_nadb: 10,premium: 10)
-puts post_list1
-# post_list1.to_yaml
+
 yaml_to_file "Post.yaml",post_list1.to_yaml
 puts Post_list.deserialize_yaml("Post.yaml")
