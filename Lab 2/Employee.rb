@@ -30,3 +30,13 @@ class Employee
 end
 
 
+class Skilled_employee < Employee
+  def initialize(surname:,name:,middlename:,birthday:,passport_data:,phone:,address:,email:,exp:,exp_description:)
+    super(surname:,name:,middlename:,birthday:,passport_data:,phone:,address:,email:)
+    @exp=exp
+    @exp_description=exp_description
+  end
+  attr_accessor :exp
+  attr_accessor :exp_description
+end
+
