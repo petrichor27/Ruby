@@ -1,0 +1,22 @@
+--- !ruby/object:Department_list
+dep_arr:
+- !ruby/object:Department
+  name: IT
+  phone: 8(123)1223777
+  duties:
+  - '111'
+  - '222'
+  index_duty: 0
+- !ruby/object:Department
+  name: HR
+  phone: 8(123)1225437
+  duties: []
+  index_duty: 0
+- !ruby/object:Department
+  name: Рекламный
+  phone: 8(123)1443277
+  duties:
+  - '444'
+  - '333'
+  index_duty: 0
+index: 0

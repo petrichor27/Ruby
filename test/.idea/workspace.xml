@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fde749f2-4cc9-45db-91a9-e2e2161cd6f6" name="Changes" comment="" />
+    <list default="true" id="78cac5f1-8cbe-42c7-8df1-3fcdd3126bce" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,18 +20,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="24bJB47JLp8pCMoK2gsFVZDmoSG" />
+  <component name="ProjectId" id="29eluyqAJjbfQGRKkeucBapkukS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,19 +32,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last.edited.regexp" value="aw30 февраля 2009da" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab 2/Department.rb" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="Lab 1" />
+      <module name="test" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -76,29 +64,14 @@
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fde749f2-4cc9-45db-91a9-e2e2161cd6f6" name="Changes" comment="" />
-      <created>1643893216613</created>
+      <changelist id="78cac5f1-8cbe-42c7-8df1-3fcdd3126bce" name="Changes" comment="" />
+      <created>1653481658822</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1643893216613</updated>
-      <workItem from="1643893217850" duration="5728000" />
-      <workItem from="1643902673949" duration="14088000" />
-      <workItem from="1643960774296" duration="4877000" />
-      <workItem from="1643977229991" duration="2831000" />
-      <workItem from="1644056522668" duration="15371000" />
-      <workItem from="1644088863296" duration="8114000" />
-      <workItem from="1644160975152" duration="7831000" />
-      <workItem from="1644230061995" duration="3194000" />
-      <workItem from="1644237526556" duration="3962000" />
-      <workItem from="1644407154907" duration="4375000" />
-      <workItem from="1644597442923" duration="1000" />
-      <workItem from="1644693807241" duration="2000" />
-      <workItem from="1644947570262" duration="41000" />
-      <workItem from="1645014309204" duration="3162000" />
-      <workItem from="1647199649962" duration="77000" />
-      <workItem from="1647893821803" duration="294000" />
-      <workItem from="1648037332915" duration="160000" />
-      <workItem from="1653484765085" duration="1800000" />
+      <updated>1653481658822</updated>
+      <workItem from="1653481660242" duration="443000" />
+      <workItem from="1653484155289" duration="6470000" />
+      <workItem from="1653586183586" duration="986000" />
     </task>
     <servers />
   </component>
@@ -106,6 +79,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab_1@main.rcov" NAME="main Coverage Results" MODIFIED="1645017372257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Lab 1" />
+    <SUITE FILE_PATH="coverage/test@main.rcov" NAME="main Coverage Results" MODIFIED="1653586944991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="test" />
   </component>
 </project>
